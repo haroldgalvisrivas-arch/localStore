@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios independientes de LocalStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ejercicios de LocalStorage</h1>
+
+    <section>
+        <h2>Ejercicio 1. Guardar un nombre</h2>
+        <form id="formGuardar">
+            <label for="nombreGuardar">Nombre:</label>
+            <input id="nombreGuardar" type="text">
+            <button type="submit">Guardar nombre</button>
+        </form>
+        <p id="resultadoGuardar"></p>
+    </section>
+    <section>
+        <h2>Ejercicio 2. Mostrar el nombre guardado</h2>
+        <form id="formMostrar">
+            <button type="submit">Mostrar nombre</button>
+        </form>
+        <p id="resultadoMostrar"></p>
+    </section>
+    <section>
+        <h2>Ejercicio 3. Editar el nombre guardado</h2>
+        <form id="formEditar">
+            <label for="nombreEditar">Nuevo nombre:</label>
+            <input id="nombreEditar" type="text">
+            <button type="submit">Actualizar nombre</button>
+        </form>
+        <p id="resultadoEditar"></p>
+    </section>
+    <section>
+        <h2>Ejercicio 4. Eliminar el nombre guardado</h2>
+        <form id="formEliminar">
+            <button type="submit">Eliminar nombre</button>
+        </form>
+        <p id="resultadoEliminar"></p>
+    </section>
+
+        <form id="formMascota">
+            <label for="mascota">Mascota:</label>
+            <input type="text" id="mascota" name="mascota">
+    
+            <label for="raza">Raza:</label>
+            <input type="text" id="raza" name="raza">
+    
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" min="0">
+    
+            <button type="submit">Guardar mascota</button>
+        </form>
+
+
+    <form id="formulario">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+        <small id="errorNombre"></small>
+
+        <label for="correo">Correo:</label>
+        <input type="text" id="correo">
+        <small id="errorCorreo"></small>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad">
+        <small id="errorEdad"></small>
+
+        <button type="submit" id="btnGuardar">
+            Registrar estudiante
+        </button>
+
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Edad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablaEstudiantes"></tbody>
+    </table>
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>

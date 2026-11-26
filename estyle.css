@@ -1,0 +1,133 @@
+/* Variables de diseño y paleta oscura/moderna con acentos vibrantes */
+:root {
+    --bg-page: #0b1120;
+    --bg-gradient: radial-gradient(circle at top right, #1e1b4b, #0b1120 60%);
+    --surface: #1e293b;
+    --surface-hover: #273549;
+    --border: #334155;
+    --primary: #3b82f6;
+    --primary-glow: rgba(59, 130, 246, 0.35);
+    --primary-hover: #2563eb;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --error: #f87171;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-page);
+    background-image: var(--bg-gradient);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 3rem 1.25rem;
+}
+
+/* =========================================
+   FORMULARIO DE REGISTRO / EDICIÓN
+   ========================================= */
+#formulario {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 2.25rem;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    animation: slideDown 0.45s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#formulario label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.3px;
+}
+
+#formulario input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    background-color: #0f172a;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+#formulario input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-glow);
+    background-color: #131c31;
+}
+
+/* Quitar flechas por defecto del input type="number" en Chrome/Safari */
+#formulario input[type="number"]::-webkit-inner-spin-button,
+#formulario input[type="number"]::-webkit-outer-spin-button {
+    opacity: 0.6;
+}
+
+/* Mensajes de validación (<small>) */
+#formulario small {
+    min-height: 1.2rem;
+    margin-top: 0.35rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--error);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+#formulario small:not(:empty)::before {
+    content: "●";
+    font-size: 0.65rem;
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Botón principal (#btnGuardar) */
+#btnGuardar {
+    margin-top: 0.5rem;
+    padding: 0.95rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
